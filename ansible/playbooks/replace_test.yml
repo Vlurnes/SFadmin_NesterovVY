@@ -1,0 +1,10 @@
+---
+- hosts: ubuntumain.my
+  become: yes
+  tasks:
+  - name: replace server
+    replace:
+      path: /etc/zabbix/zabbix_agentd.conf
+      regexp: '^Server=(.)*'
+      replace: 'Server=10.128.0.17'
+
